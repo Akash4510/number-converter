@@ -26,6 +26,7 @@ function isValidSystem(system) {
 
     // Checking if the given system is valid
     if (!Object.keys(NumberSystems).includes(sys)) {
+        console.log("Please enter a valid system!");
         return false;
     }
 
@@ -40,7 +41,6 @@ function isValidInSystem(num, system) {
 
     // Checking if the given system is valid
     if (!isValidSystem(sys)) {
-        console.log("Please enter a valid system!");
         return;
     }
 
