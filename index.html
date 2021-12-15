@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number System Converter</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>Number Converter</header>
+
+      <form>
+        <div class="display-container">
+
+          <div class="input-container">
+            <p>Binary</p>
+            <input
+             name="input-number"
+             class="input-number"
+             type="text"
+            />
+          </div>
+
+          <div class="output-container">
+            <p>Decimal</p>
+            <input
+              name="output-number"
+              class="output-number"
+              type="text"
+              disabled
+            />
+          </div>
+
+        </div>
+
+        <div class="drop-list">
+          <div class="from">
+            <p class="select-box-label">From</p>
+            <div class="select-box">
+              <select name="select-from" id="select-from">
+                <option value="binary">Binary</option>
+                <option value="octal">Octal</option>
+                <option value="decimal">Decimal</option>
+                <option value="hexadecimal">Hexadecimal</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="icon exchange-icon">
+            <i class="fas fa-exchange-alt"></i>
+          </div>
+
+          <div class="to">
+            <p class="select-box-label">To</p>
+            <div class="select-box">
+              <select
+                name="select-to"
+                id="select-to"
+                onchange="updateInputLabels();"
+              >
+                <option value="decimal">Decimal</option>
+                <option value="binary">Binary</option>
+                <option value="octal">Octal</option>
+                <option value="hexadecimal">Hexadecimal</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="error-box disabled-box">
+          <i class="fas fa-exclamation-circle error-icon"></i>
+          Error! Please enter a valid input.
+        </div>
+        <button class="convert-btn">Convert</button>
+      </form>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="num_converter.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
