@@ -21,6 +21,16 @@ const NumberSystems = {
 }
 
 
+class NumberSystemConverter {
+    constructor() {
+        console.log("NumberSystemConverter object created.");
+    }
+    convert(num, fromSys, toSys) {
+        return num + " in " + fromSys + " to " + toSys;
+    }
+}
+
+
 function isValidSystem(system) {
     let sys = String(system).toLowerCase();
 
@@ -42,6 +52,10 @@ function isValidInSystem(num, system) {
     // Checking if the given system is valid
     if (!isValidSystem(sys)) {
         return;
+    }
+
+    if (n.length <= 0) {
+        return false;
     }
 
     // Returning false if the given number contains more than one dots
@@ -71,11 +85,4 @@ function isValidInSystem(num, system) {
         }
     }
     return true;
-}
-
-
-if (isValidInSystem("1111010.110101", "Binary")) {
-    console.log("Valid");
-} else {
-    console.log("Invalid");
 }
