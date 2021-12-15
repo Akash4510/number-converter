@@ -23,14 +23,9 @@
 
       <form>
         <div class="display-container">
-
           <div class="input-container">
             <p>Binary</p>
-            <input
-             name="input-number"
-             class="input-number"
-             type="text"
-            />
+            <input name="input-number" class="input-number" type="text" />
           </div>
 
           <div class="output-container">
@@ -42,11 +37,10 @@
               disabled
             />
           </div>
-
         </div>
 
         <div class="drop-list">
-          <div class="from">
+          <div>
             <p class="select-box-label">From</p>
             <div class="select-box">
               <select name="select-from" id="select-from">
@@ -62,14 +56,10 @@
             <i class="fas fa-exchange-alt"></i>
           </div>
 
-          <div class="to">
+          <div>
             <p class="select-box-label">To</p>
             <div class="select-box">
-              <select
-                name="select-to"
-                id="select-to"
-                onchange="updateInputLabels();"
-              >
+              <select name="select-to" id="select-to">
                 <option value="decimal">Decimal</option>
                 <option value="binary">Binary</option>
                 <option value="octal">Octal</option>
