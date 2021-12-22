@@ -26,7 +26,18 @@ class NumberSystemConverter {
         console.log("NumberSystemConverter object created.");
     }
     convert(num, fromSys, toSys) {
+        if (String(num).length = 0) {
+            return "Please enter a number."
+        }
         return num + " in " + fromSys + " to " + toSys;
+    }
+}
+
+
+class NumberSystem {
+    constructor(number, system) {
+        this.number = number;
+        this.system = system;
     }
 }
 
@@ -52,10 +63,6 @@ function isValidInSystem(num, system) {
     // Checking if the given system is valid
     if (!isValidSystem(sys)) {
         return;
-    }
-
-    if (n.length <= 0) {
-        return false;
     }
 
     // Returning false if the given number contains more than one dots
