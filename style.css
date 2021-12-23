@@ -182,3 +182,28 @@ form button:hover {
     color: #fff;
     text-decoration: none;
 }
+
+@media (max-width: 500px) {
+    .container {
+        width: 90%;
+        position: absolute;
+        top: 10%
+    }
+
+    .exchange-icon {
+        display: none;
+    }
+
+    form p {
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+    }
+
+    .input-container p {
+        font-size: 1.5rem;
+    }
+
+    .select-box-label {
+        font-size: 1.2rem;
+    }
+}
