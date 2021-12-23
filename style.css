@@ -190,6 +190,10 @@ form button:hover {
         top: 15%
     }
 
+    .container header {
+        font-size: 1.95rem;
+    }
+
     .exchange-icon {
         display: none;
     }
