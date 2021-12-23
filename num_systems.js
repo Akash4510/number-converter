@@ -32,6 +32,12 @@ class NumberSystem {
 
         this.baseValue = NUMBER_SYSTEMS[sys].baseValue;
         this.validNumbers = NUMBER_SYSTEMS[sys].numbers;
+
+        this.binaryRepresentation = this.toSystem("binary");
+        this.octalRepresentation = this.toSystem("octal");
+        this.decimalRepresentation = this.toSystem("decimal");
+        this.hexadecimalRepresentation = this.toSystem("hexadecimal");
+        
     }
 
     toDecimal() {
@@ -54,15 +60,7 @@ class NumberSystem {
             currentPower--;
         }
 
-        return total;
-    }
-
-}
-
-
-class DecimalNumber extends NumberSystem {
-    constructor(num) {
-        super(num, "decimal");
+        return String(total);
     }
 
     toSystem(sys) {
@@ -70,14 +68,18 @@ class DecimalNumber extends NumberSystem {
             return "Invalid System";
         }
 
+        let number = this.toDecimal()
+
         let system = String(sys).toLowerCase();
         let baseValue = NUMBER_SYSTEMS[system]["baseValue"];
 
-        let intPart = Number(getIntegralPart(this.number));
-        let fracPart = Number(getFractionalPart(this.number));
+        // If the system is decimal number we will return the number since the number is already a decimal number.
+        if (system === "decimal") {
+            return number;
+        }
 
-        console.log(intPart);
-        console.log(fracPart);
+        let intPart = Number(getIntegralPart(number));
+        let fracPart = Number(getFractionalPart(number));
 
         let intPartAns = "";
         while (intPart > 0) {
@@ -92,7 +94,7 @@ class DecimalNumber extends NumberSystem {
 
         fracPart = Number("0." + fracPart);
         let fracPartAns = "";
-        while((fracPartAns.length < 21) && (fracPart > 0)) {
+        while ((fracPartAns.length < 21) && (fracPart > 0)) {
             let val = fracPart * baseValue;
             fracPartAns += getIntegralPart(val);
 
@@ -106,6 +108,14 @@ class DecimalNumber extends NumberSystem {
         let finalAns = intPartAns + "." + fracPartAns;
         return finalAns;
     }
+
+}
+
+
+class DecimalNumber extends NumberSystem {
+    constructor(num) {
+        super(num, "decimal");
+    }
 }
 
 
@@ -113,5 +123,18 @@ class BinaryNumber extends NumberSystem {
     constructor(num) {
         super(num, "binary");
     }
+}
 
+
+class OctalNumber extends NumberSystem {
+    constructor(num) {
+        super(num, "octal");
+    }
+}
+
+
+class HexadecimalNumber extends NumberSystem {
+    constructor(num) {
+        super(num, "hexadecimal");
+    }
 }
