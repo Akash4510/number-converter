@@ -1,3 +1,11 @@
+class NumberSystemConverter {
+    convert(num, fromSystem, toSystem) {
+        let ns = new NumberSystem(num, fromSystem);
+        return ns.inSystem[String(toSystem).toLowerCase()];
+    }
+}
+
+
 function isValidSystem(system) {
     let sys = String(system).toLowerCase();
 
