@@ -64,6 +64,11 @@ function formatNumber(num) {
     if (n.charAt(n.length - 1) === ".") {
         n = n.replace(/\./g, "");
     }
+
+    let split = n.split(".");
+    if (Number(split[1]) === 0) {
+        n = split[0]
+    }
     return n;
 }
 
