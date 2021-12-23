@@ -1,52 +1,8 @@
-const NumberSystems = {
-    "binary": {
-        "baseValue": 2,
-        "numbers": [0, 1]
-    },
-
-    "octal": {
-        "baseValue": 8,
-        "numbers": [0, 1, 2, 3, 4, 5, 6, 7]
-    },
-
-    "decimal": {
-        "baseValue": 10,
-        "numbers": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    },
-
-    "hexadecimal": {
-        "baseValue": 16,
-        "numbers": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"]
-    }
-}
-
-
-class NumberSystemConverter {
-    constructor() {
-        console.log("NumberSystemConverter object created.");
-    }
-    convert(num, fromSys, toSys) {
-        if (String(num).length = 0) {
-            return "Please enter a number."
-        }
-        return num + " in " + fromSys + " to " + toSys;
-    }
-}
-
-
-class NumberSystem {
-    constructor(number, system) {
-        this.number = number;
-        this.system = system;
-    }
-}
-
-
 function isValidSystem(system) {
     let sys = String(system).toLowerCase();
 
     // Checking if the given system is valid
-    if (!Object.keys(NumberSystems).includes(sys)) {
+    if (!Object.keys(NUMBER_SYSTEMS).includes(sys)) {
         console.log("Please enter a valid system!");
         return false;
     }
@@ -81,7 +37,7 @@ function isValidInSystem(num, system) {
     n = n.replace(/\./g, "");
 
     // Looping through all the digits and checking if the digit is valid in the given number system
-    let validNumbers = NumberSystems[sys]["numbers"];
+    let validNumbers = NUMBER_SYSTEMS[sys]["numbers"];
     validNumbers = validNumbers.map(function (i) {
         return String(i);
     })
@@ -92,4 +48,61 @@ function isValidInSystem(num, system) {
         }
     }
     return true;
+}
+
+
+function getIntegralPart(num) {
+    // Check if the given num is valid in hexadecimal
+    if (!isValidInSystem(num, sys = "hexadecimal")) {
+        return String(NaN);
+    }
+
+    let n = String(num);
+
+    let dotCount = 0;
+    for (let index = 0; index < n.length; index++) {
+        if (n[index] === ".") {
+            dotCount++;
+        }
+    }
+
+    if (dotCount > 1) {
+        throw "Invalid number";
+    }
+
+    if (!n.includes(".")) {
+        return n;
+    } else {
+        return n.split(".")[0];
+    }
+}
+
+function getFractionalPart(num) {
+    // Check if the given num is valid in hexadecimal
+    if (!isValidInSystem(num, sys = "hexadecimal")) {
+        return String(NaN);
+    }
+
+    let n = String(num);
+
+    let dotCount = 0;
+    for (let index = 0; index < n.length; index++) {
+        if (n[index] === ".") {
+            dotCount++;
+        }
+    }
+
+    if (dotCount > 1) {
+        throw "Invalid number";
+    }
+
+    if (!n.includes(".")) {
+        return n;
+    } else {
+        return n.split(".")[1];
+    }
+}
+
+function reverseString(str) {
+    return str.split("").reverse().join("");
 }
