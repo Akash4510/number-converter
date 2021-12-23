@@ -33,10 +33,12 @@ class NumberSystem {
         this.baseValue = NUMBER_SYSTEMS[sys].baseValue;
         this.validNumbers = NUMBER_SYSTEMS[sys].numbers;
 
-        this.binaryRepresentation = this.toSystem("binary");
-        this.octalRepresentation = this.toSystem("octal");
-        this.decimalRepresentation = this.toSystem("decimal");
-        this.hexadecimalRepresentation = this.toSystem("hexadecimal");
+        this.inSystem = {
+            "binary": this.toSystem("binary"),
+            "octal": this.toSystem("octal"),
+            "decimal": this.toSystem("decimal"),
+            "hexadecimal": this.toSystem("hexadecimal")
+        }
         
     }
 
