@@ -34,54 +34,6 @@ class NumberSystem {
         this.validNumbers = NUMBER_SYSTEMS[sys].numbers;
     }
 
-    splitIntoBits(bits) {
-        let intPart = getIntegralPart(this.number);
-        let fracPart = getFractionalPart(this.number);
-
-        // Reversing the integer part of the number
-        intPart = reverseString(intPart);
-
-        // Storing the splitted parts of the integer part of the number
-        let intPartSplit = [];
-        while (intPart.length > 0) {
-            // Splitting the numbers into the given number of bits.
-            let onePart = intPart.substring(0, bits);
-
-            // Adding zeros if required
-            if (onePart.length < bits) {
-                for (let zero = 0; zero < bits - onePart.length; zero++) {
-                    onePart += "0";
-                }
-            }
-
-            // Reversing the splitted part and adding it to the array
-            intPartSplit.push(reverseString(onePart));
-            intPart = intPart.substring(bits);  // Removing the splitted part from the number
-        }
-
-        // Reversing the array since we reversed the int part before
-        intPartSplit.reverse();
-
-        let fracPartSplit = [];
-        while (fracPart.length > 0) {
-            // Splitting the numbers into the given number of bits.
-            let onePart = fracPart.substring(0, bits);
-
-            // Adding zeros if required
-            if (onePart.length < bits) {
-                for (let zero = 0; zero < bits - onePart.length; zero++) {
-                    onePart += "0";
-                }
-            }
-
-            // Reversing the splitted part and adding it to the array
-            fracPartSplit.push(onePart);
-            fracPart = fracPart.substring(bits);  // Removing the splitted part from the number
-        }
-
-        return [intPartSplit, fracPartSplit];
-    }
-
     toDecimal() {
         let hexRepresentation = {
             "a": 10, "b": 11, "c": 12, "d": 13, "e": 14, "f": 15,
