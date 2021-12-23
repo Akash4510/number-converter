@@ -97,7 +97,7 @@ function getFractionalPart(num) {
     }
 
     if (!n.includes(".")) {
-        return n;
+        return "0";
     } else {
         return n.split(".")[1];
     }
