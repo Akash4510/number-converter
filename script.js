@@ -14,6 +14,8 @@ const errorBox = document.querySelector(".error-box");
 const form = document.querySelector("form");
 const convertButton = document.querySelector("convert-btn");
 
+const numConverter = new NumberSystemConverter();
+
 
 function updateLabels() {
     let inputSystem = selectFrom.options[selectFrom.selectedIndex].text;
@@ -71,9 +73,8 @@ form.addEventListener("submit", function (e) {
         errorBox.classList.add("disabled-box");
     }
 
-    if (isValidInSystem(inputNumber, inputSystem)) {
-        outputField.textContent = inputNumber + " in " + outputSystem + " is ??.";
-    }
+    let outputNumber = numConverter.convert(inputNumber, inputSystem, outputSystem);
+    outputField.value = outputNumber;
 
 });
 
