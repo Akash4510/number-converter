@@ -23,7 +23,7 @@ const NUMBER_SYSTEMS = {
 
 class NumberSystem {
     constructor(num, sys) {
-        this.number = String(num).toUpperCase();
+        this.number = formatNumber(num);
         this.system = String(sys).toLowerCase();
 
         if (!isValidInSystem(num, sys)) {
@@ -41,7 +41,7 @@ class NumberSystem {
     }
 
     toDecimal() {
-        let hexRepresentation = {
+        let valuesOfLettersInHex = {
             "a": 10, "b": 11, "c": 12, "d": 13, "e": 14, "f": 15,
         }
 
@@ -52,15 +52,15 @@ class NumberSystem {
         for (let i = 0; i < num.length; i++) {
             let n = num.charAt(i);
             // if the number is a hexadecimal number it may include a, b, c, d, e and f
-            if (Object.keys(hexRepresentation).includes(n)) {
-                n = hexRepresentation[n];  // Replacing a with 10, b with 11 and so on..
+            if (Object.keys(valuesOfLettersInHex).includes(n)) {
+                n = valuesOfLettersInHex[n];  // Replacing a with 10, b with 11 and so on..
             }
 
             total += (Number(n) * this.baseValue ** currentPower);
             currentPower--;
         }
 
-        return String(total);
+        return formatNumber(total);
     }
 
     toSystem(sys) {
@@ -68,6 +68,7 @@ class NumberSystem {
             return "Invalid System";
         }
 
+        // First convert the number into decimal number system.
         let number = this.toDecimal()
 
         let system = String(sys).toLowerCase();
@@ -106,7 +107,7 @@ class NumberSystem {
         }
 
         let finalAns = intPartAns + "." + fracPartAns;
-        return finalAns;
+        return formatNumber(finalAns);
     }
 
 }

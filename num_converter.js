@@ -51,6 +51,15 @@ function isValidInSystem(num, system) {
 }
 
 
+function formatNumber(num) {
+    let n = String(num).toUpperCase();
+    if (n.charAt(n.length - 1) === ".") {
+        n = n.replace(/\./g, "");
+    }
+    return n;
+}
+
+
 function getIntegralPart(num) {
     // Check if the given num is valid in hexadecimal
     if (!isValidInSystem(num, sys = "hexadecimal")) {
