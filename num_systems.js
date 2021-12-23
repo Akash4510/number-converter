@@ -76,7 +76,7 @@ class NumberSystem {
         let system = String(sys).toLowerCase();
         let baseValue = NUMBER_SYSTEMS[system]["baseValue"];
 
-        // If the system is decimal number we will return the number since the number is already a decimal number.
+        // If the system is decimal we will return the number since we have already converted the number to decimal number system.
         if (system === "decimal") {
             return number;
         }
