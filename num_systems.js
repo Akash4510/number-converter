@@ -113,31 +113,3 @@ class NumberSystem {
     }
 
 }
-
-
-class DecimalNumber extends NumberSystem {
-    constructor(num) {
-        super(num, "decimal");
-    }
-}
-
-
-class BinaryNumber extends NumberSystem {
-    constructor(num) {
-        super(num, "binary");
-    }
-}
-
-
-class OctalNumber extends NumberSystem {
-    constructor(num) {
-        super(num, "octal");
-    }
-}
-
-
-class HexadecimalNumber extends NumberSystem {
-    constructor(num) {
-        super(num, "hexadecimal");
-    }
-}
