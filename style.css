@@ -11,9 +11,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
     min-height: 100vh;
-    padding: 50px, 0;
     background-color: #8EC5FC;
     background-image: linear-gradient(62deg, #f1e4fd 0%, #cee7ff 100%);
 }
@@ -202,7 +200,8 @@ form button:hover {
 }
 
 .attribution {
-    padding-top: 100px;
+    text-align: center;
+    margin-top: 30px;
     font-size: 1.2rem;
 }
 
@@ -217,6 +216,8 @@ form button:hover {
 @media (max-width: 500px) {
     .container {
         width: min(95%, 400px);
+        position: absolute;
+        top: 12%;
         padding: 30px 20px 20px;
     }
 
