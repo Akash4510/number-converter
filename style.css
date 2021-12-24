@@ -229,13 +229,22 @@ form button:hover {
     form button {
         margin-top: 30px;
     }
+
+    .mobile-only-buttons {
+        display: none;
+    }
 }
 
 @media (max-width: 360px) {
     .exchange-icon {
         display: none;
     }
+
     .mobile-only-buttons {
         display: flex;
+    }
+
+    form button {
+        margin-top: 30px;
     }
 }
