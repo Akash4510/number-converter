@@ -196,9 +196,10 @@ form button:hover {
 
 @media (max-width: 500px) {
     .container {
-        width: 90%;
+        width: 95%;
         position: absolute;
-        top: 12%
+        top: 12%;
+        padding: 30px 20px 20px;
     }
 
     .container header {
