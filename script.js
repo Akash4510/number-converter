@@ -49,6 +49,12 @@ function swap() {
 
     updateLabels();
     validateInput();
+
+    if (inputField.value != "") {
+        let inputNumber = inputField.value;
+        let outputNumber = numConverter.convert(inputNumber, selectFrom.value, selectTo.value);
+        outputField.value = outputNumber;
+    }
 }
 
 
@@ -85,7 +91,7 @@ form.addEventListener("submit", function (e) {
     let inputSystem = selectFrom.value;
     let outputSystem = selectTo.value;
 
-    if (inputNumber.length < 0) {
+    if (inputNumber.length = 0) {
         errorBox.classList.add("disabled-box");
     }
 
