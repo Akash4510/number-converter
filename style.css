@@ -199,6 +199,19 @@ form button:hover {
     margin-right: 10px;
 }
 
+.attribution {
+    position: absolute;
+    bottom: 10px;
+}
+
+.attribution a {
+    text-decoration: none;
+    background-image: linear-gradient(326deg, #a82e84 0%, #510774 74%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
 @media (max-width: 500px) {
     .container {
         width: min(95%, 400px);
