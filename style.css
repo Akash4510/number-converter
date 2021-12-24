@@ -203,15 +203,13 @@ form button:hover {
     }
 
     .container header {
+        text-align: left;
         font-size: 1.96rem;
-    }
-
-    .exchange-icon {
-        display: none;
+        padding-left: 3px;
     }
 
     form p {
-        font-size: 1.2rem;
+        font-size: 1rem;
         margin-bottom: 5px;
     }
 
@@ -220,11 +218,11 @@ form button:hover {
     }
 
     .select-box-label {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .mobile-only-buttons {
-        display: flex;
+        display: none;
     }
 
     .mobile-only-buttons button {
@@ -233,6 +231,6 @@ form button:hover {
     }
 
     form button {
-        margin-top: 20px;
+        margin-top: 30px;
     }
 }
