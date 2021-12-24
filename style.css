@@ -226,6 +226,11 @@ form button:hover {
         display: flex;
     }
 
+    .mobile-only-buttons button {
+        height: 40px;
+        opacity: .75;
+    }
+
     form button {
         margin-top: 20px;
     }
