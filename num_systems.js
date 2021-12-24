@@ -78,7 +78,7 @@ class NumberSystem {
 
         // If the system is decimal we will return the number since we have already converted the number to decimal number system.
         if (system === "decimal") {
-            return number;
+            return formatNumber(number);
         }
 
         let intPart = Number(getIntegralPart(number));
@@ -109,6 +109,9 @@ class NumberSystem {
         }
 
         let finalAns = intPartAns + "." + fracPartAns;
+        if (formatNumber(finalAns).length === 0) {
+            return "0";
+        }
         return formatNumber(finalAns);
     }
 
