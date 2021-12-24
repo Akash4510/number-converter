@@ -14,6 +14,9 @@ const errorBox = document.querySelector(".error-box");
 const form = document.querySelector("form");
 const convertButton = document.querySelector("convert-btn");
 
+const swapBtn = document.querySelector(".swap-btn");
+const resetBtn = document.querySelector(".reset-btn");
+
 const numConverter = new NumberSystemConverter();
 
 
@@ -37,6 +40,17 @@ function validateInput() {
     }
 }
 
+function swap() {
+    let inputSystem = selectFrom.value;
+    let outputSystem = selectTo.value;
+
+    selectFrom.value = outputSystem;
+    selectTo.value = inputSystem;
+
+    updateLabels();
+    validateInput();
+}
+
 
 inputField.addEventListener("input", validateInput);
 
@@ -50,15 +64,17 @@ selectTo.addEventListener("change", function () {
     validateInput();
 });
 
-exchangeIcon.addEventListener("click", function () {
-    let inputSystem = selectFrom.value;
-    let outputSystem = selectTo.value;
+exchangeIcon.addEventListener("click", swap);
 
-    selectFrom.value = outputSystem;
-    selectTo.value = inputSystem;
+swapBtn.addEventListener("click", swap);
 
+resetBtn.addEventListener("click", function () {
+    selectFrom.value = "decimal";
+    selectTo.value = "binary";
+
+    inputField.value = "";
+    outputField.value = "";
     updateLabels();
-    validateInput();
 });
 
 form.addEventListener("submit", function (e) {

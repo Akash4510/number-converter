@@ -183,15 +183,26 @@ form button:hover {
     text-decoration: none;
 }
 
+.mobile-only-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    display: none;
+}
+
+.mobile-only-buttons button:first-child {
+    margin-right: 10px;
+}
+
 @media (max-width: 500px) {
     .container {
         width: 90%;
         position: absolute;
-        top: 15%
+        top: 12%
     }
 
     .container header {
-        font-size: 1.95rem;
+        font-size: 1.96rem;
     }
 
     .exchange-icon {
@@ -209,5 +220,13 @@ form button:hover {
 
     .select-box-label {
         font-size: 1.2rem;
+    }
+
+    .mobile-only-buttons {
+        display: flex;
+    }
+
+    form button {
+        margin-top: 20px;
     }
 }
