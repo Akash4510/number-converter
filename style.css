@@ -190,49 +190,52 @@ form button:hover {
     display: none;
 }
 
+.mobile-only-buttons button {
+    height: 40px;
+    opacity: .75;
+}
+
 .mobile-only-buttons button:first-child {
     margin-right: 10px;
 }
 
 @media (max-width: 500px) {
     .container {
-        width: 95%;
+        width: min(95%, 400px);
         position: absolute;
         top: 12%;
         padding: 30px 20px 20px;
     }
 
     .container header {
+        text-align: left;
         font-size: 1.96rem;
-    }
-
-    .exchange-icon {
-        display: none;
+        padding-left: 3px;
     }
 
     form p {
-        font-size: 1.2rem;
+        font-size: 1rem;
         margin-bottom: 5px;
     }
 
     .input-container p {
-        font-size: 1.4rem;
-    }
-
-    .select-box-label {
         font-size: 1.2rem;
     }
 
-    .mobile-only-buttons {
-        display: flex;
-    }
-
-    .mobile-only-buttons button {
-        height: 40px;
-        opacity: .75;
+    .select-box-label {
+        font-size: 1rem;
     }
 
     form button {
-        margin-top: 20px;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 360px) {
+    .exchange-icon {
+        display: none;
+    }
+    .mobile-only-buttons {
+        display: flex;
     }
 }
