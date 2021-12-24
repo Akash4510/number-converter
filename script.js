@@ -81,6 +81,8 @@ resetBtn.addEventListener("click", function () {
     inputField.value = "";
     outputField.value = "";
     updateLabels();
+
+    errorBox.classList.add("disabled-box");
 });
 
 form.addEventListener("submit", function (e) {
