@@ -68,6 +68,14 @@ selectFrom.addEventListener("change", function () {
 selectTo.addEventListener("change", function () {
     updateLabels();
     validateInput();
+
+    let inputNumber = inputField.value;
+
+    let inputSystem = selectFrom.value;
+    let outputSystem = selectTo.value;
+
+    let outputNumber = numConverter.convert(inputNumber, inputSystem, outputSystem);
+    outputField.value = outputNumber;
 });
 
 exchangeIcon.addEventListener("click", swap);

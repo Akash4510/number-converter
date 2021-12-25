@@ -51,7 +51,7 @@ function isValidInSystem(num, system) {
     })
     for (let index = 0; index < n.length; index++) {
         if (!validNumbers.includes(n[index])) {
-            console.log(n[index] + " is not valid in " + sys + " number system.");
+            console.log(n + " is not valid in " + sys + " number system.");
             return false;
         }
     }
