@@ -34,6 +34,7 @@ function validateInput() {
     let system = selectFrom.value;
 
     if (!isValidInSystem(inputValue, system)) {
+        outputField.value = "";
         errorBox.classList.remove("disabled-box");
     } else {
         errorBox.classList.add("disabled-box");
