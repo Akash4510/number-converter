@@ -27,7 +27,6 @@ class NumberSystem {
         this.system = String(sys).toLowerCase();
 
         if (!isValidInSystem(num, sys)) {
-            outputField.value = "ERROR!";
             throw "The given number " + num + " is not valid in " + sys + " system.";
         }
 
