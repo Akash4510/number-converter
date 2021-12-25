@@ -217,7 +217,7 @@ form button:hover {
     .container {
         width: min(95%, 400px);
         position: absolute;
-        top: 12%;
+        top: 10%;
         padding: 30px 20px 20px;
     }
 
