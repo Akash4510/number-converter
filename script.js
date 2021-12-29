@@ -58,6 +58,17 @@ function swap() {
     }
 }
 
+function reset() {
+    selectFrom.value = "decimal";
+    selectTo.value = "binary";
+
+    inputField.value = "";
+    outputField.value = "";
+    updateLabels();
+
+    errorBox.classList.add("disabled-box");
+}
+
 
 inputField.addEventListener("input", validateInput);
 
@@ -83,16 +94,7 @@ exchangeIcon.addEventListener("click", swap);
 
 swapBtn.addEventListener("click", swap);
 
-resetBtn.addEventListener("click", function () {
-    selectFrom.value = "decimal";
-    selectTo.value = "binary";
-
-    inputField.value = "";
-    outputField.value = "";
-    updateLabels();
-
-    errorBox.classList.add("disabled-box");
-});
+resetBtn.addEventListener("click", reset);
 
 form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -110,5 +112,7 @@ form.addEventListener("submit", function (e) {
     outputField.value = outputNumber;
 
 });
+
+document.addEventListener("load", reset);
 
 updateLabels();
